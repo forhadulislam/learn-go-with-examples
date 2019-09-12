@@ -30,7 +30,6 @@ func main() {
 	newStr := buf.String()
 	fmt.Printf(newStr)
 
-
 	sPort := "8085"
 	http.HandleFunc("/home", home)
 	http.HandleFunc("/workTime", work)
