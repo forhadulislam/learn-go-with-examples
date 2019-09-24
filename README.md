@@ -11,6 +11,6 @@ Learn about go with real examples. Here are the list of examples:
     7. Interface
     8. JsonHandler
     9. Closure
-    10. httptest 
+    10. httptest
 
 
