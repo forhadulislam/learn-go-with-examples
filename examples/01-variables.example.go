@@ -5,5 +5,9 @@ import(
 )
 
 func main(){
+	var myString string
+	
 
+
+	fmt.Println(myString)
 }
