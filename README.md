@@ -1,6 +1,8 @@
 ## Learn Go with examples
 
-Learn about go with real examples. Here are the list of examples:
+Learn about go with real examples. This repo contains example codes for Go beginners. 
+The examples provide a better understanding of using Go features. 
+Here are the list of examples:
 
     1.  Variables
     2.  Slices & Maps

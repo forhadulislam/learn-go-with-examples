@@ -30,10 +30,10 @@ func main() {
 	newStr := buf.String()
 	fmt.Printf(newStr)
 
-	sPort := "8085"
+	serverPort := "8085"
 	http.HandleFunc("/home", home)
 	http.HandleFunc("/workTime", work)
-	fmt.Println("Server is running at port : " + sPort)
-	http.ListenAndServe(":" + sPort, nil)
+	fmt.Println("Server is running at port : " + serverPort)
+	http.ListenAndServe(":" + serverPort, nil)
 
 }

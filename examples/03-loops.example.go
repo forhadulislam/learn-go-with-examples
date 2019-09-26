@@ -11,7 +11,7 @@ func main(){
 	}
 
 
-	myList := []string{"Sam", "Ahmad", "Shihab" }
+	myList := []string{ "Sam", "Ahmad", "Shihab", "Sami" }
 
 	// For loop example with traditional way
 	for i := 0; i < len(myList); i++{
