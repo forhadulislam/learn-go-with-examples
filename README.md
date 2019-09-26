@@ -2,15 +2,21 @@
 
 Learn about go with real examples. Here are the list of examples:
 
-    1. Variables
-    2. Slices & Maps
-    3. Pointers
-    4. Structs
-    5. Channels
-    6. Error
-    7. Interface
-    8. JsonHandler
-    9. Closure
-    10. httptest
+    1.  Variables
+    2.  Slices & Maps
+    3.  Loops
+    4.  Pointers
+    5.  Structs
+    6.  Methods
+    7.  Error
+    8.  Interface
+    9.  Goroutines
+    10. Channels    
+    11. Closure    
+    12. JsonHandler
+    13. Mutex
+    14. httptest
+    *.  Viper
+    *.  Cobra
 
 
