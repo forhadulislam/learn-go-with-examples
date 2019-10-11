@@ -11,6 +11,18 @@ type Vehicle struct{
 	Warranty int
 }
 
+type User struct{
+	Username string
+	Email string
+	age int
+}
+
+type Client struct {
+	Company string
+	User
+	V Vehicle
+}
+
 func main() {
 	v := Vehicle{
 		Brand:    "Hyundai",
@@ -32,4 +44,18 @@ func main() {
 	}
 
 	fmt.Println(annonymusStruct)
+
+	
+	c := Client{
+		Company: "Apple",
+		User:    User{
+			"john",
+			"john@doe.com",
+			29,
+		},
+		V:       Vehicle{
+			
+		},
+	}
+	
 }
