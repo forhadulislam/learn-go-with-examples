@@ -6,10 +6,10 @@ import(
 )
 
 type Vehicle struct{
-	Brand string
-	Model string
-	Year int
-	Warranty int
+	Brand string `json:"brand"`
+	Model string `json:"model"`
+	Year int `json:"year"`
+	Warranty int `json:"warranty"`
 }
 
 func main(){
@@ -33,7 +33,7 @@ func main(){
 
 	// 			UnMarshaling
 	// UnMarshaling based on a struct
-	simpleJson := []byte(`{"Brand":"Hyundai","Model":"i30","Year":2017,"Warranty":5}`)
+	simpleJson := []byte(`{"Brand":"Hyundai","Model":"i30","Warranty":5,"Year":2017}`)
 	vUnMarsh := &Vehicle{}
 	error = json.Unmarshal(simpleJson, &vUnMarsh)
 	fmt.Println( vUnMarsh )
