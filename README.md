@@ -18,6 +18,9 @@ Here are the list of examples:
     12. JsonHandler
     13. Mutex
     14. httptest
+    15. StringBuilder
+    16. Files and IO
+    17. Time and Date
     *.  Viper
     *.  Cobra
 
