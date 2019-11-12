@@ -1,4 +1,4 @@
-package example
+package main
 
 import(
 	"fmt"
@@ -23,6 +23,12 @@ type Client struct {
 	V Vehicle
 }
 
+func(v *Vehicle) printMyVehicle(){
+	fmt.Println("printMyVehicle() starts")
+	fmt.Println(v)
+	fmt.Println("printMyVehicle() ends")
+}
+
 func main() {
 	v := Vehicle{
 		Brand:    "Hyundai",
@@ -30,8 +36,7 @@ func main() {
 		Year:     2019,
 		Warranty: 10,
 	}
-
-	fmt.Println(v)
+	v.printMyVehicle()
 
 	annonymusStruct := struct {
 		Name string
@@ -57,5 +62,7 @@ func main() {
 			
 		},
 	}
+
+	fmt.Println(c)
 	
 }
