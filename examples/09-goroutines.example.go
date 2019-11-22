@@ -35,4 +35,10 @@ func main(){
 	}
 
 	wg.Wait()
+
+
+	/*
+	Using an empty select{} can be used to keep function alive indefinitely
+	*/
+	//	select{}
 }

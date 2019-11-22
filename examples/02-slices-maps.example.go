@@ -7,6 +7,7 @@ import(
 
 func main(){
 	aSlice := []int{1,5,6,3,9}
+	fmt.Println(aSlice)
 	aSlice = append(aSlice, 15, 12)
 	fmt.Println(aSlice)
 
@@ -29,7 +30,4 @@ func main(){
 	// Create empty map with Make
 	mp := make(map[string]string)
 	fmt.Println(mp)
-
-
-
 }
