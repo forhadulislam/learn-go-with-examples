@@ -18,7 +18,7 @@ func main() {
 	timeP := time.Now()
 	ticker := time.NewTicker(100 * time.Millisecond)
 
-	done := make(chan bool)
+	done := make(chan bool, 1)
 
 	myTicker := time.NewTicker( 100 * time.Millisecond)
 	fmt.Println(myTicker)
@@ -34,11 +34,12 @@ func main() {
 
 			if diff >= 2 {
 				myTicker.Stop()
-				done <- true
 				fmt.Println("2 seconds passed channel is true")
+				done <- true
 			}
 			fmt.Println("Tick at", t)
 			fmt.Println("Diff ", diff)
+
 
 		}
 	}
