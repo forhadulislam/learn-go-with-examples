@@ -13,7 +13,6 @@ func main() {
 		<-newTimer.C
 		fmt.Println("Timer Goroutine expired")
 	}()
-	<-newTimer.C
-	fmt.Println("Timer 2 expired")
 
+	time.Sleep(time.Second * 2)
 }
