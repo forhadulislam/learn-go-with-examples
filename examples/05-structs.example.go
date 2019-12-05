@@ -11,7 +11,7 @@ type Vehicle struct{
 	Warranty int
 }
 
-type User struct{
+type People struct{
 	Username string
 	Email string
 	age int
@@ -19,7 +19,7 @@ type User struct{
 
 type Client struct {
 	Company string
-	User
+	People
 	V Vehicle
 }
 
@@ -53,7 +53,7 @@ func main() {
 	
 	c := Client{
 		Company: "Apple",
-		User:    User{
+		People:    People{
 			"john",
 			"john@doe.com",
 			29,

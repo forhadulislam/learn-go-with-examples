@@ -12,7 +12,7 @@ import (
 func main() {
 	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if strings.HasPrefix(r.URL.Path, "/user/profile") && strings.HasSuffix(r.URL.Path, "/profile") {
-			fmt.Fprintln(w, "Hello User profile, client")
+			fmt.Fprintln(w, "Hello People profile, client")
 		}
 		if strings.HasPrefix(r.URL.Path, "/user/settings") && strings.HasSuffix(r.URL.Path, "/settings") {
 			fmt.Fprintln(w, "I am the tags, client")
@@ -33,7 +33,7 @@ func main() {
 	}
 
 	fmt.Printf("Running %s \n", url)
-	fmt.Printf("Response body : %s \n", string(greetings) )
+	fmt.Printf("Response body : %s \n", string(greetings))
 
-	//time.Sleep(time.Minute)
+	//time.Sleep(time.Minute * 2)
 }
