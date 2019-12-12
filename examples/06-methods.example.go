@@ -11,11 +11,11 @@ import (
 func RandomString(length int) string {
 	rand.Seed(time.Now().UnixNano())
 	const characterOptions = "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-	byte := make([]byte, length)
-	for i := range byte {
-		byte[i] = characterOptions[rand.Intn(len(characterOptions))]
+	bytes := make([]byte, length)
+	for i := range bytes {
+		bytes[i] = characterOptions[rand.Intn(len(characterOptions))]
 	}
-	return string(byte)
+	return string(bytes)
 }
 
 func getFreePort() (int, error) {
