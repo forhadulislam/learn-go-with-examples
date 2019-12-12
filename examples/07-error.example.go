@@ -6,10 +6,10 @@ import (
 )
 
 func fetchData(data string) (string, error){
-	if(data != "invalid"){
+	if data != "invalid" {
 		return "No error", nil
 	}
-	errorData := errors.New("Invalid data received!")
+	errorData := errors.New("invalid data received")
 	return "", errorData
 }
 
