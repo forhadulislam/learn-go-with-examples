@@ -31,64 +31,88 @@ func switchingTypesExamples(){
 }
 
 /// Common interface example
-type User struct {
-	Name string
-	Email string
-	Username string
+type AdminInterface interface {
+	AddAdmin() string
+	GetAdmin() string
+	RemoveAdmin() string
 }
 
 type Admin struct {
-	User
-	isAdmin bool
+	Name string
+	Email string
+	Username string
+	isAdSupermin bool
 }
 
-type UserInterface interface {
-	GetAdminStatus() string
+type SuperUsers struct {
+	Name string
+	Email string
+	Username string
+	isSuperUser bool
 }
 
-func (u User) GetAdminStatus() string{
-	return fmt.Sprintf("The user is not a Admin!")
+func (a Admin) AddAdmin() string{
+	return fmt.Sprintf("added admin")
 }
 
-func (a Admin) GetAdminStatus() string{
-	if a.isAdmin {
-		return fmt.Sprintf("The user is an Admin!")
+func (a Admin) GetAdmin() string{
+	if a.isAdSupermin {
+		return fmt.Sprintf("The user is super admin!")
 	}
-	return fmt.Sprintf("The user is not a Admin!")
+	return fmt.Sprintf("The user is a normal Admin!")
 }
-/// Common interface implementation ends
 
+func (a Admin) RemoveAdmin() string{
+	if a.isAdSupermin {
+		return fmt.Sprintf("The user is super admin! cannot remove")
+	}
+	return fmt.Sprintf("admin is removed")
+}
+
+func (s SuperUsers) AddAdmin() string{
+	return fmt.Sprintf("added user")
+}
+
+func (s SuperUsers) GetAdmin() string{
+	if s.isSuperUser {
+		return fmt.Sprintf("The user is super user!")
+	}
+	return fmt.Sprintf("The user is a normal user!")
+}
+
+func (s SuperUsers) RemoveAdmin() string{
+	if s.isSuperUser {
+		return fmt.Sprintf("The user is super user! cannot remove")
+	}
+	return fmt.Sprintf("user is removed")
+}
+
+func ExecuteCommonInterface(admin AdminInterface){
+	fmt.Println("Executing interface")
+	fmt.Println(admin.AddAdmin())
+	fmt.Println(admin.GetAdmin())
+	fmt.Println(admin.RemoveAdmin())
+	fmt.Println("execution ended")
+}
+
+/// Common interface implementation ends
 func main(){
 	emptyInterfaceExamples()
-
 	switchingTypesExamples()
 
-	user := User{
+	admin := Admin{
 		Name:    "John Doe",
 		Email:    "john.doe@email.com",
 		Username: "johnd",
 	}
 
-	admin := Admin{
-		User:    User{
-			Name:    "Chris Doe",
-			Email:    "chris.doe@email.com",
-			Username: "chrisd",
-		},
-		isAdmin: true,
+	sUser := SuperUsers{
+		Name:    "John Doe",
+		Email:    "john.doe@email.com",
+		Username: "johnd",
+		isSuperUser: true,
 	}
 
-	nonAdmin := Admin{
-		User:    User{
-			Name:    "Chris Doe",
-			Email:    "chris.doe@email.com",
-			Username: "chrisd",
-		},
-		isAdmin: false,
-	}
-
-	fmt.Println(user.GetAdminStatus())
-	fmt.Println(admin.GetAdminStatus())
-	fmt.Println(nonAdmin.GetAdminStatus())
-
+	ExecuteCommonInterface(admin)
+	ExecuteCommonInterface(sUser)
 }
