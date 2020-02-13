@@ -4,6 +4,8 @@ import(
 	"fmt"
 )
 
+// Example 1: Basics of Struct
+
 type Vehicle struct{
 	Brand string
 	Model string
@@ -29,7 +31,11 @@ func(v *Vehicle) printMyVehicle(){
 	fmt.Println("printMyVehicle() ends")
 }
 
+
+// Main function
 func main() {
+
+	// Part of Example 1
 	v := Vehicle{
 		Brand:    "Hyundai",
 		Model:    "i30",
@@ -64,5 +70,5 @@ func main() {
 	}
 
 	fmt.Println(c)
-	
 }
+

@@ -11,6 +11,6 @@ func main(){
 
 
 	myt.Lock()
-	fmt.Println("Print anything")
+	fmt.Println("Print anything", data)
 	myt.Unlock()
 }
