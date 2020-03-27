@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book list</title>
+</head>
+<body>
+<p>
+    Book list for: {{ .Reader }}
+</p>
+<table>
+    <tr>
+        <td>Title</td>
+        <td>Author</td>
+        <td>Description</td>
+    </tr>
+    {{ with .List }}
+        {{ range . }}
+            <tr>
+                <td>{{ .Title }}</td>
+                <td>{{ .Author }}</td>
+                <td>{{ if .Description }}{{ .Description }}{{ else }}--{{ end }}</td>
+            </tr>
+        {{ end }}
+    {{ end }}
+</table>
+</body>
+</html>
