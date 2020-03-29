@@ -19,7 +19,7 @@ func main() {
 	fmt.Println(nanoSecond)
 
 	// Create a custom time Object
-	customTime := time.Date(2019,11,11,10,10, 30, 0, time.Local)
+	customTime := time.Date(2019, 11, 11, 10, 10, 30, 0, time.Local)
 	fmt.Println(customTime)
 	fmt.Println(customTime.UTC().Format(time.RFC3339))
 
@@ -30,7 +30,7 @@ func main() {
 	fmt.Println(cTime)
 
 	// Calculate time difference
-	previousTime := time.Date(2019,11,11,10,10, 30, 0, time.Local)
+	previousTime := time.Date(2019, 11, 11, 10, 10, 30, 0, time.Local)
 	timeDifference := now.Sub(previousTime).Nanoseconds()
 	println("Time difference is: ", timeDifference)
 }

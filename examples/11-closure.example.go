@@ -1,17 +1,17 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
-func addInt(a int, b int) func() int{
+func addInt(a int, b int) func() int {
 	Sum := a + b
 	return func() int {
 		return Sum
 	}
 }
 
-func main(){
+func main() {
 	myOutput := addInt(10, 7)
 
 	fmt.Println(myOutput)

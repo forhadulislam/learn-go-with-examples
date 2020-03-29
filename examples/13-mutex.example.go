@@ -1,14 +1,13 @@
 package main
 
-import(
+import (
 	"fmt"
 	"sync"
 )
 
-func main(){
+func main() {
 	myt := sync.Mutex{}
 	data := make(map[string]string)
-
 
 	myt.Lock()
 	fmt.Println("Print anything", data)

@@ -7,7 +7,7 @@ import (
 
 func main() {
 
-	newTimer := time.NewTimer( time.Second )
+	newTimer := time.NewTimer(time.Second)
 
 	go func() {
 		<-newTimer.C

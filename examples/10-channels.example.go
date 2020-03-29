@@ -1,10 +1,10 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
-func main(){
+func main() {
 
 	ch := make(chan int)
 	go func() {
@@ -13,7 +13,7 @@ func main(){
 
 	go func() {
 		ch <- 19
-		val := <- ch
+		val := <-ch
 		fmt.Println(val)
 	}()
 

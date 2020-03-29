@@ -1,10 +1,10 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
-func emptyInterfaceExamples(){
+func emptyInterfaceExamples() {
 	var emptyInterface interface{}
 	emptyInterface = 100
 	emptyInterface = "Hello, interface"
@@ -15,7 +15,7 @@ func emptyInterfaceExamples(){
 	fmt.Println(emptyInterface)
 }
 
-func switchingTypesExamples(){
+func switchingTypesExamples() {
 	var aInterface interface{}
 	aInterface = "Nothing"
 
@@ -38,56 +38,56 @@ type AdminInterface interface {
 }
 
 type Admin struct {
-	Name string
-	Email string
-	Username string
+	Name         string
+	Email        string
+	Username     string
 	isAdSupermin bool
 }
 
 type SuperUsers struct {
-	Name string
-	Email string
-	Username string
+	Name        string
+	Email       string
+	Username    string
 	isSuperUser bool
 }
 
-func (a Admin) AddAdmin() string{
+func (a Admin) AddAdmin() string {
 	return fmt.Sprintf("added admin")
 }
 
-func (a Admin) GetAdmin() string{
+func (a Admin) GetAdmin() string {
 	if a.isAdSupermin {
 		return fmt.Sprintf("The user is super admin!")
 	}
 	return fmt.Sprintf("The user is a normal Admin!")
 }
 
-func (a Admin) RemoveAdmin() string{
+func (a Admin) RemoveAdmin() string {
 	if a.isAdSupermin {
 		return fmt.Sprintf("The user is super admin! cannot remove")
 	}
 	return fmt.Sprintf("admin is removed")
 }
 
-func (s SuperUsers) AddAdmin() string{
+func (s SuperUsers) AddAdmin() string {
 	return fmt.Sprintf("added user")
 }
 
-func (s SuperUsers) GetAdmin() string{
+func (s SuperUsers) GetAdmin() string {
 	if s.isSuperUser {
 		return fmt.Sprintf("The user is super user!")
 	}
 	return fmt.Sprintf("The user is a normal user!")
 }
 
-func (s SuperUsers) RemoveAdmin() string{
+func (s SuperUsers) RemoveAdmin() string {
 	if s.isSuperUser {
 		return fmt.Sprintf("The user is super user! cannot remove")
 	}
 	return fmt.Sprintf("user is removed")
 }
 
-func ExecuteCommonInterface(admin AdminInterface){
+func ExecuteCommonInterface(admin AdminInterface) {
 	fmt.Println("Executing interface")
 	fmt.Println(admin.AddAdmin())
 	fmt.Println(admin.GetAdmin())
@@ -96,20 +96,20 @@ func ExecuteCommonInterface(admin AdminInterface){
 }
 
 /// Common interface implementation ends
-func main(){
+func main() {
 	emptyInterfaceExamples()
 	switchingTypesExamples()
 
 	admin := Admin{
-		Name:    "John Doe",
+		Name:     "John Doe",
 		Email:    "john.doe@email.com",
 		Username: "johnd",
 	}
 
 	sUser := SuperUsers{
-		Name:    "John Doe",
-		Email:    "john.doe@email.com",
-		Username: "johnd",
+		Name:        "John Doe",
+		Email:       "john.doe@email.com",
+		Username:    "johnd",
 		isSuperUser: true,
 	}
 

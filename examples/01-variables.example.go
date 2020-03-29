@@ -1,10 +1,10 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
-func main(){
+func main() {
 	// Defining an empty string
 	var myEmptyString string
 
@@ -17,9 +17,6 @@ func main(){
 	// Initializing a string array of size 5
 	anotherString := make([]string, 5)
 
-
-
-
 	fmt.Println(myEmptyString)
 
 	fmt.Println(myString)
@@ -27,5 +24,5 @@ func main(){
 	fmt.Println(str)
 
 	fmt.Println(anotherString)
-	fmt.Println( len(anotherString) )
+	fmt.Println(len(anotherString))
 }

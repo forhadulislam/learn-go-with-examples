@@ -1,12 +1,11 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
-
-func main(){
-	aSlice := []int{1,5,6,3,9}
+func main() {
+	aSlice := []int{1, 5, 6, 3, 9}
 	fmt.Println(aSlice)
 	aSlice = append(aSlice, 15, 12)
 	fmt.Println(aSlice)
@@ -22,7 +21,7 @@ func main(){
 	fmt.Println(m)
 
 	mi := map[string]string{
-		"Name": "John Doe",
+		"Name":  "John Doe",
 		"Email": "john@email.com",
 	}
 	fmt.Println(mi)

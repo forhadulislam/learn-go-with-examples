@@ -1,10 +1,10 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
-func main(){
+func main() {
 	s := "first string"
 	pointer := &s
 	fmt.Println(s)

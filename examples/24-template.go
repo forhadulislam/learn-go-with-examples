@@ -68,4 +68,28 @@ and Natasha Rostov, the young daughter of a nobleman who intrigues both men.`,
 		panic(err)
 	}
 
+	fmt.Println("")
+
+	// Example: funcMaps
+	const tmpl = `{{if isRegistered .User}}registered{{else}}not registered{{end}}`
+
+	t = template.Must(template.New("").Funcs(template.FuncMap{"isRegistered": isRegistered}).Parse(tmpl))
+	if err := t.Execute(os.Stdout, nil); err != nil {
+		panic(err)
+	}
+	fmt.Println("")
+
+	u := user{Registered: true}
+	if err := t.Execute(os.Stdout, map[string]interface{}{"User": &u}); err != nil {
+		panic(err)
+	}
+	fmt.Println("")
+}
+
+type user struct {
+	Registered bool
+}
+
+func isRegistered(u *user) bool {
+	return u != nil && u.Registered
 }

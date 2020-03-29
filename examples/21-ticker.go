@@ -20,14 +20,14 @@ func main() {
 
 	done := make(chan bool, 1)
 
-	myTicker := time.NewTicker( 100 * time.Millisecond)
+	myTicker := time.NewTicker(100 * time.Millisecond)
 	fmt.Println(myTicker)
 
 	// Ticker example with Time difference
-	Loop:
+Loop:
 	for {
 		select {
-		case <- done:
+		case <-done:
 			fmt.Println("2 seconds passed")
 			break Loop
 		case t := <-ticker.C:
@@ -42,22 +42,20 @@ func main() {
 			fmt.Println("myTicker at ", t)
 			fmt.Println("Diff ", diff)
 
-
 		}
 	}
 
 	// Ticker example with time.After
-	anotherTicker := time.NewTicker( 100 * time.Millisecond)
+	anotherTicker := time.NewTicker(100 * time.Millisecond)
 	fmt.Println(anotherTicker)
 	timeOut := time.After(2 * time.Second)
 	for {
 		select {
-		case <- timeOut:
+		case <-timeOut:
 			fmt.Println("2 seconds passed")
 			return
 		case t := <-ticker.C:
 			fmt.Println("anotherTicker at ", t)
-
 
 		}
 	}

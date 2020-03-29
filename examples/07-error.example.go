@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func fetchData(data string) (string, error){
+func fetchData(data string) (string, error) {
 	if data != "invalid" {
 		return "No error", nil
 	}
@@ -13,7 +13,7 @@ func fetchData(data string) (string, error){
 	return "", errorData
 }
 
-func main(){
+func main() {
 	currentString, err := fetchData("Some data")
 	fmt.Println("Current String :", currentString)
 	fmt.Println("Error :", err)

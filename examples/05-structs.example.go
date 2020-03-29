@@ -1,22 +1,22 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
 // Example 1: Basics of Struct
 
-type Vehicle struct{
-	Brand string
-	Model string
-	Year int
+type Vehicle struct {
+	Brand    string
+	Model    string
+	Year     int
 	Warranty int
 }
 
-type People struct{
+type People struct {
 	Username string
-	Email string
-	age int
+	Email    string
+	age      int
 }
 
 type Client struct {
@@ -25,12 +25,11 @@ type Client struct {
 	V Vehicle
 }
 
-func(v *Vehicle) printMyVehicle(){
+func (v *Vehicle) printMyVehicle() {
 	fmt.Println("printMyVehicle() starts")
 	fmt.Println(v)
 	fmt.Println("printMyVehicle() ends")
 }
-
 
 // Main function
 func main() {
@@ -45,7 +44,7 @@ func main() {
 	v.printMyVehicle()
 
 	annonymusStruct := struct {
-		Name string
+		Name  string
 		Email string
 		Phone string
 	}{
@@ -56,19 +55,15 @@ func main() {
 
 	fmt.Println(annonymusStruct)
 
-	
 	c := Client{
 		Company: "Apple",
-		People:    People{
+		People: People{
 			"john",
 			"john@doe.com",
 			29,
 		},
-		V:       Vehicle{
-			
-		},
+		V: Vehicle{},
 	}
 
 	fmt.Println(c)
 }
-
