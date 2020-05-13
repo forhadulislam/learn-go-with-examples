@@ -33,4 +33,8 @@ func main() {
 	previousTime := time.Date(2019, 11, 11, 10, 10, 30, 0, time.Local)
 	timeDifference := now.Sub(previousTime).Nanoseconds()
 	println("Time difference is: ", timeDifference)
+
+	// Location
+	tz := time.Now().Location().String()
+	fmt.Println(tz)
 }

@@ -1,0 +1,47 @@
+
+User ID: {{$._id}}
+{{$secure:= "yes"}}
+{{ $protocol:= "http"}}
+{{if eq $secure "yes"}}{{ $protocol = "https" }}{{else}}{{ $protocol = "http" }}{{end}}
+{{- $port:= emptyString "" "8090" -}}
+{{$profileURL := printf "%s://%s:%s/user/%s" ($protocol) ("localhost") ($port) ($._id)}}
+Profile URL: {{$profileURL}}
+Full name: {{$.name}}
+Gender: {{$.gender}}
+Favorite Fruit: {{$.favoriteFruit}}
+Tags: {{ range $v := $.tags }} {{ $v }}, {{ end }}
+Friends -
+{{ range $_, $v := $.friends }}
+    * {{ $v.name }}
+{{ end }}
+Location: {{$.latitude}}, {{$.longitude}}
+
+{{ $ageCategory:= getAgeCategory $.age }}
+Age: {{$.age }} {{ $ageCategory }}
+
+About {{$.name }}:
+{{ $.about }}
+Contact information:
+    Email: {{ $.email }}
+    Phone: {{ $.phone }}
+    Address: {{ $.address }}
+
+{{ $.nested }}
+{{ range $_, $v := $.nested }}
+	{{ if isInt $v }}
+	  v is int .. {{ $v }}
+	{{ end }}
+
+	{{- if isMap $v -}}
+	  {{- range $k, $v := $v -}}
+		  k={{ $k }}, v={{ $v }}
+	  {{- end -}}
+	{{- end -}}
+
+	{{- if isSlice $v -}}
+		{{ range $_, $s := $v -}}
+			{{ $s }}
+		{{- end }}
+	{{- end -}}
+
+{{ end }}
