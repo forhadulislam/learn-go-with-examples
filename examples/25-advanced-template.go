@@ -70,7 +70,7 @@ func main() {
 				{"post": "do"},
 				{"post": "now!"},
 				99,
-				["yolo", "yolo", "yolo"]
+				["kla", "kli", "klu"]
 			]
 		  }
 	`

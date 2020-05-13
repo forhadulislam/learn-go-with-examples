@@ -27,19 +27,19 @@ Contact information:
     Address: {{ $.address }}
 
 {{ range $_, $v := $.moredata }}
-	{{ if isInt $v }}
-	  val is int .. {{ $v }}
-	{{ end }}
+    {{ if isInt $v }}
+        val is int .. {{ $v }}
+    {{ end }}
 
 	{{- if isMap $v -}}
-	  {{- range $k, $v := $v -}}
-		  key={{ $k }}, val={{ $v }}
-	  {{- end -}}
+      {{- range $k, $v := $v -}}
+        key={{ $k }}, val={{ $v }}
+      {{- end -}}
 	{{- end -}}
 
 	{{- if isSlice $v -}}
-		{{ range $_, $s := $v -}}
-			{{ $s }}
-		{{- end }}
+      {{ range $_, $s := $v -}}
+        {{ $s }}
+      {{- end }}
 	{{- end -}}
 {{ end }}
