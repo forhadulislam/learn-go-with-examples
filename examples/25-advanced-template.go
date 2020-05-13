@@ -16,7 +16,6 @@ import (
 )
 
 func main() {
-	var err error
 	text := `
 		{
 			"_id": "5ebbb20e29d76a9f5217c5d0",
@@ -76,7 +75,7 @@ func main() {
 	`
 
 	user := make(map[string]interface{})
-	if err = json.Unmarshal([]byte(text), &user); err != nil {
+	if err := json.Unmarshal([]byte(text), &user); err != nil {
 		panic(err)
 	}
 
