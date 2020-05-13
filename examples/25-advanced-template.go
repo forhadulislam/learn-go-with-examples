@@ -61,7 +61,17 @@ func main() {
 			  }
 			],
 			"greeting": "Hello, Murray Estrada! You have 3 unread messages.",
-			"favoriteFruit": "apple"
+			"favoriteFruit": "apple",
+			"moredata": [
+				{"post": "I have"},
+				{"post": "nothing"},
+				{"post": "to"},
+				{"post": [0, 1, 1, 3, 2]},
+				{"post": "do"},
+				{"post": "now!"},
+				99,
+				["yolo", "yolo", "yolo"]
+			]
 		  }
 	`
 

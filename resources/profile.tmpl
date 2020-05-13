@@ -26,15 +26,14 @@ Contact information:
     Phone: {{ $.phone }}
     Address: {{ $.address }}
 
-{{ $.nested }}
-{{ range $_, $v := $.nested }}
+{{ range $_, $v := $.moredata }}
 	{{ if isInt $v }}
-	  v is int .. {{ $v }}
+	  val is int .. {{ $v }}
 	{{ end }}
 
 	{{- if isMap $v -}}
 	  {{- range $k, $v := $v -}}
-		  k={{ $k }}, v={{ $v }}
+		  key={{ $k }}, val={{ $v }}
 	  {{- end -}}
 	{{- end -}}
 
@@ -43,5 +42,4 @@ Contact information:
 			{{ $s }}
 		{{- end }}
 	{{- end -}}
-
 {{ end }}
