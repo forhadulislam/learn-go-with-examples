@@ -157,6 +157,12 @@ func main() {
 			return input
 		},
 		"fail": func(msg string) (string, error) { return "", errors.New(msg) },
+		"mandatory": func(i interface{}) (interface{}, error) {
+			if i == nil {
+				return "", errors.New("mandatory value missing")
+			}
+			return i, nil
+		},
 	}
 
 	paths := []string{
