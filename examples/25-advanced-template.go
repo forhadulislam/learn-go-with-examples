@@ -13,6 +13,7 @@ import (
 	"path"
 	"reflect"
 	"strconv"
+	"strings"
 	"text/template"
 )
 
@@ -163,6 +164,7 @@ func main() {
 			}
 			return i, nil
 		},
+		"upper": strings.ToUpper,
 	}
 
 	paths := []string{
