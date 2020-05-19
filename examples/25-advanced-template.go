@@ -7,6 +7,7 @@ package main
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"os"
 	"path"
@@ -155,6 +156,7 @@ func main() {
 			}
 			return input
 		},
+		"fail": func(msg string) (string, error) { return "", errors.New(msg) },
 	}
 
 	paths := []string{
