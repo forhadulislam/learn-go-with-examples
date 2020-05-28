@@ -76,6 +76,7 @@ func main() {
 
 	fmt.Println(aBigMap["user3"]["default"])
 	fmt.Println(aBigMap["user4"]["default"])
+	fmt.Println(aBigMap["noOne"] == nil)
 	fmt.Println(aBigMap["user3"]["default"] == nil)
 	fmt.Println(aBigMap["user4"]["default"] == nil)
 }
