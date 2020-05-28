@@ -53,7 +53,7 @@ func main() {
 			},
 			"secure": {
 				"check":    "true",
-				"redirect": "true",
+				"redirect": "false",
 			},
 		},
 		"user2": {
@@ -63,13 +63,13 @@ func main() {
 			},
 			"https": {
 				"check":    "true",
-				"redirect": "true",
+				"redirect": "false",
 			},
 		},
 		"user3": {
 			"default": {
 				"check":    "true",
-				"redirect": "true",
+				"redirect": "false",
 			},
 		},
 	}
@@ -78,5 +78,4 @@ func main() {
 	fmt.Println(aBigMap["user4"]["default"])
 	fmt.Println(aBigMap["user3"]["default"] == nil)
 	fmt.Println(aBigMap["user4"]["default"] == nil)
-
 }
