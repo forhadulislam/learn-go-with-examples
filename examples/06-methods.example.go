@@ -56,8 +56,8 @@ func RandomNumber(length int) string {
 
 func isValidIP(ipAddress string) bool {
 	parsedIP := net.ParseIP(ipAddress)
-	isIPv4 := parsedIP != nil && strings.Contains(ipAddress, ".")
-	isIPv6 := parsedIP != nil && strings.Contains(ipAddress, ":")
+	isIPv4 := parsedIP.To4() != nil && strings.Contains(ipAddress, ".")
+	isIPv6 := parsedIP.To16() != nil && strings.Contains(ipAddress, ":")
 	if isIPv4 || isIPv6 {
 		fmt.Printf("%v is a valid IP address\n", ipAddress)
 		return true

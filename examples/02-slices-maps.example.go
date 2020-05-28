@@ -21,8 +21,8 @@ func main() {
 	fmt.Println(m)
 
 	mi := map[string]string{
-		"Name":  "Another Doe",
-		"Email": "another@email.com",
+		"Name":     "Another Doe",
+		"Email":    "another@email.com",
 		"Features": "faster, stronger",
 	}
 	fmt.Println(mi)
@@ -43,5 +43,40 @@ func main() {
 	if features, ok := mi["Features"]; ok {
 		fmt.Printf("Feature is: %s \n", features)
 	}
+
+	// Complicated map
+	var aBigMap = map[string]map[string]map[string]string{
+		"user1": {
+			"normal": {
+				"check":    "true",
+				"redirect": "true",
+			},
+			"secure": {
+				"check":    "true",
+				"redirect": "true",
+			},
+		},
+		"user2": {
+			"http": {
+				"check":    "true",
+				"redirect": "true",
+			},
+			"https": {
+				"check":    "true",
+				"redirect": "true",
+			},
+		},
+		"user3": {
+			"default": {
+				"check":    "true",
+				"redirect": "true",
+			},
+		},
+	}
+
+	fmt.Println(aBigMap["user3"]["default"])
+	fmt.Println(aBigMap["user4"]["default"])
+	fmt.Println(aBigMap["user3"]["default"] == nil)
+	fmt.Println(aBigMap["user4"]["default"] == nil)
 
 }
