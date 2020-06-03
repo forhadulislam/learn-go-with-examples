@@ -37,4 +37,9 @@ func main() {
 	// Location
 	tz := time.Now().Location().String()
 	fmt.Println(tz)
+
+	// Timezone
+	loc, _ := time.LoadLocation("UTC")
+	now = time.Now().In(loc)
+	fmt.Println("ZONE : ", loc, " Time : ", now) // UTC
 }
