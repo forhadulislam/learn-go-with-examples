@@ -1,6 +1,9 @@
 package main
 
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 func callBack(sentence string, function func(callBackString string))  {
 	println("Input: ", sentence)
@@ -13,5 +16,6 @@ func main() {
 		b := strings.Split(s, " ")
 		println( len(s) )
 		println( len(b) )
+		fmt.Printf("%q\n", b)
 	})
 }
