@@ -24,5 +24,6 @@ func main() {
 	fmt.Println(str)
 
 	fmt.Println(anotherString)
+
 	fmt.Println(len(anotherString))
 }
