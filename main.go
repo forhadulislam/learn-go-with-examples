@@ -34,5 +34,4 @@ func main() {
 	http.HandleFunc("/workTime", work)
 	fmt.Println("Server is running at port : " + serverPort)
 	http.ListenAndServe(":"+serverPort, nil)
-
 }
