@@ -4,9 +4,33 @@ import (
 	"fmt"
 )
 
+func updateMap(data map[string]interface{}, key string) map[string]interface{} {
+	var dataClone = data
+	//dataClont = copy(dataClone, data)
+	dataClone[key] = "********"
+	return dataClone
+}
+
+func copyMap(originalMap map[string]interface{}) map[string]interface{} {
+	newMap := make(map[string]interface{})
+	for key, value := range originalMap {
+		newMap[key] = value
+	}
+	return newMap
+}
+
+func filterMap(originalMap map[string]interface{}) map[string]interface{} {
+	newMap := make(map[string]interface{})
+	for key, value := range originalMap {
+		newMap[key] = value
+	}
+	return newMap
+}
+
 func main() {
 	aSlice := []int{1, 5, 6, 3, 9}
 	fmt.Println(aSlice)
+
 	aSlice = append(aSlice, 15, 12)
 	fmt.Println(aSlice)
 
@@ -15,10 +39,17 @@ func main() {
 	fmt.Println(s)
 
 	// Maps
-	m := map[string]string{}
+	m := map[string]interface{}{}
 	m["Name"] = "John Doe"
 	m["Email"] = "john@email.com"
+	m["Password"] = "@veryStrongP@$$W0RD"
+	mCopy := copyMap(m)
 	fmt.Println(m)
+	fmt.Println(updateMap(m, "Password"))
+	fmt.Println(m)
+
+	//fmt.Println(updateMap(mCopy, "Password"))
+	fmt.Println(mCopy)
 
 	mi := map[string]string{
 		"Name":     "Another Doe",
