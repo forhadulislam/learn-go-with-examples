@@ -16,7 +16,7 @@ func main() {
 func getBoard() [][]int {
 	boardSize := make([]int, 8)
 	board := [][]int{}
-	for _ = range boardSize {
+	for range boardSize {
 		dt := &boardSize
 		board = append(board, *dt)
 	}

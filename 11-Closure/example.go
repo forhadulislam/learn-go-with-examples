@@ -14,6 +14,6 @@ func addInt(a int, b int) func() int {
 func main() {
 	myOutput := addInt(10, 7)
 
-	fmt.Println(myOutput)
+	//fmt.Println(myOutput)
 	fmt.Println(myOutput())
 }
