@@ -44,6 +44,10 @@ func main() {
 		count--
 	}
 
-	myListDuplicate := []string{"ABC", "ABC"}
+	myListDuplicate := []string{"ABC", "DEF"}
 	fmt.Print(myListDuplicate)
+
+	for ind := range myListDuplicate {
+		fmt.Println(myListDuplicate[ind])
+	}
 }
