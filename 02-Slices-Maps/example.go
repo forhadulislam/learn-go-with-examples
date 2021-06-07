@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"reflect"
+	"strings"
 )
 
 func updateMap(data map[string]interface{}, key string) map[string]interface{} {
@@ -110,4 +112,9 @@ func main() {
 	fmt.Println(aBigMap["noOne"] == nil)
 	fmt.Println(aBigMap["user3"]["default"] == nil)
 	fmt.Println(aBigMap["user4"]["default"] == nil)
+
+	stringArray := []string {"Hello","world","!"}
+	justString := fmt.Sprintf("[%s]", strings.Join(stringArray, ", "))
+
+	fmt.Println("value \t=", justString, "\ntype \t=", reflect.TypeOf(justString))
 }
