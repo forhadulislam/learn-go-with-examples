@@ -12,6 +12,17 @@ func main() {
 
 	myList := []string{"Sam", "Ahmad", "Shihab", "Sami"}
 
+	var err error
+	for data := range myList {
+		if myList[data] == "Shihab" {
+			err = fmt.Errorf("blocked user")
+		}
+		fmt.Printf("What name is it '%s'!\n", myList[data])
+	}
+	if err != nil {
+		fmt.Printf("You have got an error '%s'!\n", err)
+	}
+
 	// For loop example with traditional way
 	for i := 0; i < len(myList); i++ {
 		fmt.Printf("Hello I am '%s' running inside a for loop! \n", myList[i])
@@ -33,4 +44,10 @@ func main() {
 		count--
 	}
 
+	myListDuplicate := []string{"ABC", "DEF"}
+	fmt.Print(myListDuplicate)
+
+	for ind := range myListDuplicate {
+		fmt.Println(myListDuplicate[ind])
+	}
 }
