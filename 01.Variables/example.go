@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 )
 
 func main() {
@@ -27,7 +26,4 @@ func main() {
 	fmt.Println(anotherString)
 
 	fmt.Println(len(anotherString))
-
-
-	fmt.Println(strconv.Itoa(int(msg.Partition)))
 }
