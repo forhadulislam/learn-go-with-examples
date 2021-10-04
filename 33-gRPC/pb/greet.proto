@@ -1,6 +1,6 @@
 syntax = "proto3";
 
 package greet;
-option go_package="pb";
+option go_package = "pb";
 
 service GreetService{}
