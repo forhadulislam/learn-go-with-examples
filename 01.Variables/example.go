@@ -9,7 +9,7 @@ func main() {
 	var myEmptyString string
 
 	// Defining a string with initial value
-	var myString = "Whaterev"
+	var myString = "Whatever"
 
 	// Another way of defining a string with initial value
 	str := "Third string"
