@@ -36,6 +36,15 @@ func main() {
 	aSlice = append(aSlice, 15, 12)
 	fmt.Println(aSlice)
 
+	// If you have a sparse array (an array where most elements are set to their zero value),
+	// you can specify only the indices with values in the array literal:
+	var x = [12]int{1, 5: 4, 6, 9: 100, 15}
+	fmt.Println(x)
+
+	var a [2][3]int
+	fmt.Println(a)
+	fmt.Println(len(a))
+
 	// 10 slice values with make
 	s := make([]int, 10)
 	fmt.Println(s)
