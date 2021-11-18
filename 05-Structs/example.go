@@ -4,6 +4,10 @@ import (
 	"fmt"
 )
 
+// Maps are good but they have limitations.
+// They don’t define an API since there’s no way to constrain a map to only allow certain keys.
+// Also, all the values in a map must be of the same type.
+
 // Example 1: Basics of Struct
 
 type Vehicle struct {

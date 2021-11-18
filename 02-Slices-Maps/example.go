@@ -30,7 +30,9 @@ func filterMap(originalMap map[string]interface{}) map[string]interface{} {
 }
 
 func main() {
-	aSlice := []int{1, 5, 6, 3, 9}
+	// slices look quite a bit like arrays, but there are subtle differences.
+	// The first thing to notice is that we don’t specify the size of the slice when we declare it:
+	aSlice := []int{1, 5, 6, 3, 9, 8, 9}
 	fmt.Println(aSlice)
 
 	aSlice = append(aSlice, 15, 12)
@@ -44,6 +46,13 @@ func main() {
 	var a [2][3]int
 	fmt.Println(a)
 	fmt.Println(len(a))
+
+	// What is the difference, if any, in the following two slice declarations, and which one is more preferable?
+	var o []int
+	p := []int{}
+	fmt.Println(o)
+	fmt.Println(p)
+	// Answer: The first declaration does not allocate memory if the slice is not used, so this declaration method is preferred.
 
 	// 10 slice values with make
 	s := make([]int, 10)
