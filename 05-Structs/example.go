@@ -37,7 +37,6 @@ func (v *Vehicle) printMyVehicle() {
 
 // Main function
 func main() {
-
 	// Part of Example 1
 	v := Vehicle{
 		Brand:    "Hyundai",
