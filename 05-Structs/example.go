@@ -44,7 +44,7 @@ func main() {
 		Model:    "i30",
 		Year:     2019,
 		Warranty: 10,
-	}
+	} // This is a map literal style of struct definition. Struct literal is without fields (i.e Brand, Model).
 	v.printMyVehicle()
 
 	annonymusStruct := struct {
