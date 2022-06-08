@@ -22,7 +22,6 @@ func main() {
 		Warranty: 5,
 	}
 
-	// 			Marshaling
 	// Marshaling to json byte slice
 	vMarsh, error := json.Marshal(v)
 	if error != nil {
@@ -40,7 +39,6 @@ func main() {
 	fmt.Println(string(vEmptyMarsh))
 	fmt.Printf("This is a : %T \n", vEmptyMarsh)
 
-	// 			UnMarshaling
 	// UnMarshaling based on a struct
 	simpleJson := []byte(`{"Brand":"Hyundai","Model":"i30","Warranty":5,"Year":2017}`)
 	vUnMarsh := &Transport{}
@@ -86,12 +84,12 @@ func main() {
 	//jBigMarsh := map[string]interface{}{}
 	error = json.Unmarshal([]byte(jsonString), &jBigMarsh)
 	fmt.Println(jBigMarsh)
-	for dt := range jBigMarsh{
+	for dt := range jBigMarsh {
 		fmt.Println(dt)
 		fmt.Println(jBigMarsh[dt]["endpoint"])
 		if jBigMarsh[dt]["details"] == nil {
 			fmt.Println("This is nil {}")
-		}else{
+		} else {
 			vMarsh, err := json.Marshal(jBigMarsh[dt]["details"])
 			if err != nil {
 				fmt.Errorf("could not Marshal the struct! Error: %v", error)
@@ -101,5 +99,23 @@ func main() {
 		fmt.Println(jBigMarsh[dt]["details"])
 	}
 	fmt.Printf("This is a : %T \n", jBigMarsh)
+
+	// UnMarshaling based on a struct
+	type LogsData struct {
+		Url string `json:"url"`
+	}
+	fmt.Println("UnMarshaling based on a struct with additional data")
+	jsonWithUnnecessaryData := []byte(`
+			[
+				{"url":"https://url.1/","model":"i30"},
+				{"url":"https://url.2/","model":"i30"},
+				{"url":"https://url.3/","model":"i30"}
+			]			
+		`)
+	var vUnMarsh2 []LogsData
+	error = json.Unmarshal(jsonWithUnnecessaryData, &vUnMarsh2)
+	fmt.Println(error)
+	fmt.Println(vUnMarsh2)
+	fmt.Printf("This is a : %T \n", vUnMarsh2)
 
 }
