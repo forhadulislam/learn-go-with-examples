@@ -109,13 +109,16 @@ func main() {
 			[
 				{"url":"https://url.1/","model":"i30"},
 				{"url":"https://url.2/","model":"i30"},
-				{"url":"https://url.3/","model":"i30"}
+				{"url":"https://url.3/","model":"i30"},
+				{"model":"i30"}
 			]			
 		`)
 	var vUnMarsh2 []LogsData
 	error = json.Unmarshal(jsonWithUnnecessaryData, &vUnMarsh2)
 	fmt.Println(error)
 	fmt.Println(vUnMarsh2)
+	fmt.Println(len(vUnMarsh2))
+	fmt.Println(vUnMarsh2[3].Url)
 	fmt.Printf("This is a : %T \n", vUnMarsh2)
 
 }
