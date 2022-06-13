@@ -121,4 +121,25 @@ func main() {
 	fmt.Println(vUnMarsh2[3].Url)
 	fmt.Printf("This is a : %T \n", vUnMarsh2)
 
+	// UnMarshaling for a json.Rawmessage
+	type LogsData2 struct {
+		Url json.RawMessage `json:"url"`
+	}
+	fmt.Println("UnMarshaling for a json.Rawmessage")
+	jsonWithUnnecessaryData = json.RawMessage(`
+			[
+				{"url":"https://url.1/","model":"i30"},
+				{"url":"https://url.2/","model":"i30"},
+				{"url":"https://url.3/","model":"i30"},
+				{"model":"i30"}
+			]			
+		`)
+	var vUnMarsh3 []LogsData2
+	error = json.Unmarshal(jsonWithUnnecessaryData, &vUnMarsh3)
+	fmt.Println(error)
+	fmt.Println(vUnMarsh3)
+	fmt.Println(len(vUnMarsh3))
+	fmt.Println(string(vUnMarsh3[2].Url))
+	fmt.Printf("This is a : %T \n", vUnMarsh3)
+
 }
