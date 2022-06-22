@@ -10,6 +10,7 @@ type Transport struct {
 	Model    string `json:"model"`
 	Year     int    `json:"year"`
 	Warranty int    `json:"warranty"`
+	hidden   string `json:"hidden"`
 }
 
 func main() {
@@ -20,12 +21,13 @@ func main() {
 		Model:    "i30",
 		Year:     2017,
 		Warranty: 5,
+		hidden:   "some hidden data",
 	}
 
 	// Marshaling to json byte slice
-	vMarsh, error := json.Marshal(v)
-	if error != nil {
-		fmt.Errorf("could not Marshal the struct! Error: %v", error)
+	vMarsh, err := json.Marshal(v)
+	if err != nil {
+		fmt.Println(fmt.Errorf("could not Marshal the struct! Error: %v", err))
 	}
 	fmt.Println(string(vMarsh))
 	fmt.Printf("This is a : %T \n", vMarsh)
@@ -34,16 +36,17 @@ func main() {
 	vEmpty := Transport{}
 	vEmptyMarsh, err := json.Marshal(vEmpty)
 	if err != nil {
-		fmt.Errorf("could not Marshal the struct! Error: %v", error)
+		fmt.Println(fmt.Errorf("could not Marshal the struct! Error: %v", err))
 	}
 	fmt.Println(string(vEmptyMarsh))
 	fmt.Printf("This is a : %T \n", vEmptyMarsh)
 
 	// UnMarshaling based on a struct
-	simpleJson := []byte(`{"Brand":"Hyundai","Model":"i30","Warranty":5,"Year":2017}`)
+	simpleJson := []byte(`{"Brand":"Hyundai","Model":"i30","Warranty":5,"Year":2017, "hidden": "my hidden data"}`)
 	vUnMarsh := &Transport{}
-	error = json.Unmarshal(simpleJson, &vUnMarsh)
+	err = json.Unmarshal(simpleJson, &vUnMarsh)
 	fmt.Println(vUnMarsh)
+	fmt.Printf("hidden data is empty: %t \n", vUnMarsh.hidden == "")
 	fmt.Printf("This is a : %T \n", vUnMarsh)
 
 	// Big string
@@ -82,7 +85,7 @@ func main() {
 	}`
 	jBigMarsh := map[string]map[string]interface{}{}
 	//jBigMarsh := map[string]interface{}{}
-	error = json.Unmarshal([]byte(jsonString), &jBigMarsh)
+	err = json.Unmarshal([]byte(jsonString), &jBigMarsh)
 	fmt.Println(jBigMarsh)
 	for dt := range jBigMarsh {
 		fmt.Println(dt)
@@ -92,7 +95,7 @@ func main() {
 		} else {
 			vMarsh, err := json.Marshal(jBigMarsh[dt]["details"])
 			if err != nil {
-				fmt.Errorf("could not Marshal the struct! Error: %v", error)
+				fmt.Errorf("could not Marshal the struct! Error: %v", err)
 			}
 			fmt.Println(string(vMarsh))
 		}
@@ -114,8 +117,8 @@ func main() {
 			]			
 		`)
 	var vUnMarsh2 []LogsData
-	error = json.Unmarshal(jsonWithUnnecessaryData, &vUnMarsh2)
-	fmt.Println(error)
+	err = json.Unmarshal(jsonWithUnnecessaryData, &vUnMarsh2)
+	fmt.Println(err)
 	fmt.Println(vUnMarsh2)
 	fmt.Println(len(vUnMarsh2))
 	fmt.Println(vUnMarsh2[3].Url)
@@ -135,8 +138,8 @@ func main() {
 			]			
 		`)
 	var vUnMarsh3 []LogsData2
-	error = json.Unmarshal(jsonWithUnnecessaryData, &vUnMarsh3)
-	fmt.Println(error)
+	err = json.Unmarshal(jsonWithUnnecessaryData, &vUnMarsh3)
+	fmt.Println(err)
 	fmt.Println(vUnMarsh3)
 	fmt.Println(len(vUnMarsh3))
 	fmt.Println(string(vUnMarsh3[2].Url))
