@@ -18,7 +18,6 @@ type BookList struct {
 }
 
 func main() {
-
 	// Example 1
 	lib := Books{
 		Title:       "Nothing to lose",
