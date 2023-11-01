@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/cenkalti/backoff"
 	"io"
 	"log"
 	"net/http"
 	"time"
+
+	"github.com/cenkalti/backoff/v4"
 )
 
 func main() {
@@ -31,10 +32,7 @@ func main() {
 	}
 
 	fmt.Println(value.StatusCode)
-}
 
-func doSomething() (int64, error) {
-	return 6, nil
 }
 
 func sendRequest() (*http.Response, error) {
