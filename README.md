@@ -31,9 +31,18 @@ Here are the list of examples:
     25. Advanced template
     26. Crypto
     27. Callback
-    28. Pattern
+    28. Patterns
     29. Viper
     30. Cobra
+    31. regex
+    32. Encoding
+    33. gRPC
+    34. Race condition
+    35. gjson
+    36. Expomential backoff
+    37. mock with interfaces
+    38. httpmock
+    39. Generics (Upcoming)
 
 ### How to run the examples
 
