@@ -4,6 +4,7 @@ go 1.20
 
 require (
 	github.com/cenkalti/backoff/v4 v4.2.1
+	github.com/jarcoal/httpmock v1.3.1
 	github.com/stretchr/testify v1.8.4
 	github.com/tidwall/gjson v1.17.0
 	go.uber.org/mock v0.3.0
