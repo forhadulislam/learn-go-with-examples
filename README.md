@@ -50,8 +50,15 @@ You can run the example files if you have Go installed in your system. Here is a
 
     go run 01.Variables/example.go
 
-Tested on: Go version 1.14.1
+Tested on: Go version `1.20.5`
+
+### How to install dependencies
+
+On the root of the project, run the following command - 
+
+    go mod vendor
 
 ### How can the examples help
 
 The best way to utilize the examples is to clone the repo and play with the parameters in your local environment. 
+You can also run the examples easily and see the output from whatever IDEs you are using.
