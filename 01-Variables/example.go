@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func main() {
@@ -26,4 +27,8 @@ func main() {
 	fmt.Println(anotherString)
 
 	fmt.Println(len(anotherString))
+
+	splitParamValue := strings.Split(myString, ",")
+	fmt.Println("Split values: ", splitParamValue)
+	fmt.Println("Split values length: ", len(splitParamValue))
 }
