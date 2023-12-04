@@ -6,11 +6,12 @@ import (
 )
 
 type Transport struct {
-	Brand    string `json:"brand"`
-	Model    string `json:"model"`
-	Year     int    `json:"year"`
-	Warranty int    `json:"warranty"`
-	hidden   string `json:"hidden"`
+	Brand    string         `json:"brand"`
+	Model    string         `json:"model"`
+	Year     int            `json:"year"`
+	Warranty int            `json:"warranty"`
+	hidden   string         `json:"hidden"`
+	Data     map[string]any `json:"data"`
 }
 
 func main() {
@@ -145,4 +146,8 @@ func main() {
 	fmt.Println(string(vUnMarsh3[2].Url))
 	fmt.Printf("This is a : %T \n", vUnMarsh3)
 
+	dataBytes, err := json.Marshal(v.Data)
+	fmt.Println(v)
+	fmt.Println(err)
+	fmt.Println(string(dataBytes))
 }
