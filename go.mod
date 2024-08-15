@@ -1,6 +1,6 @@
 module github.com/forhadulislam/learn-go-with-examples
 
-go 1.20
+go 1.22.1
 
 require (
 	github.com/IBM/sarama v1.42.0

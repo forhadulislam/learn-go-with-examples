@@ -150,4 +150,17 @@ func main() {
 	fmt.Println(v)
 	fmt.Println(err)
 	fmt.Println(string(dataBytes))
+
+	// UnMarshaling for a json.Rawmessage
+	var vus LogsData
+	// message := json.RawMessage(`{}`)
+	message := []byte(`{}`)
+	err = json.Unmarshal(message, &vus)
+	fmt.Println("vUnMarsh3 for a json.Rawmessage")
+	if err != nil {
+		fmt.Println("err found", err)
+	}
+	fmt.Println("err: ", err)
+	fmt.Println(vus.Url)
+	fmt.Println(vus)
 }
