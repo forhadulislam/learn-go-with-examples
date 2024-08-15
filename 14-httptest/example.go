@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"net/http/httptest"
@@ -12,10 +12,10 @@ import (
 func main() {
 	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if strings.HasPrefix(r.URL.Path, "/user/profile") && strings.HasSuffix(r.URL.Path, "/profile") {
-			fmt.Fprintln(w, "Hello People profile, client")
+			fmt.Println(w, "Hello People profile, client")
 		}
 		if strings.HasPrefix(r.URL.Path, "/user/settings") && strings.HasSuffix(r.URL.Path, "/settings") {
-			fmt.Fprintln(w, "I am the tags, client")
+			fmt.Println(w, "I am the tags, client")
 		}
 	}))
 	defer ts.Close()
@@ -26,7 +26,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	greetings, err := ioutil.ReadAll(res.Body)
+	greetings, err := io.ReadAll(res.Body)
 	res.Body.Close()
 	if err != nil {
 		log.Fatal(err)

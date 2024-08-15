@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"time"
 )
 
@@ -46,4 +47,17 @@ func main() {
 	t := time.Now()
 	zone, offset := t.Zone()
 	fmt.Println(zone, offset)
+
+	str := "2022-04-06T16:48:56.088125Z"
+	tt, err := time.Parse(time.RFC3339, str)
+	fmt.Println(tt)
+	fmt.Println(err)
+
+	a := tt.Add(time.Now().Sub(tt) + time.Hour*24*365*1)
+	fmt.Println(a)
+
+	//b := tt.AddDate(time.Now().Year()-tt.Year()+1, 0, 0)
+	//fmt.Println(b)
+
+	fmt.Println(math.Floor(time.Now().AddDate(0, 0, 365).Sub(tt).Hours() / 24))
 }

@@ -8,7 +8,7 @@ import (
 	"github.com/IBM/sarama"
 )
 
-// sarama consumer group
+// ConsumerGroup sarama consumer group
 type ConsumerGroup struct {
 	// sarama consumer group
 

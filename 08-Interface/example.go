@@ -30,7 +30,7 @@ func switchingTypesExamples() {
 
 }
 
-/// Common interface example
+// AdminInterface Common interface example
 type AdminInterface interface {
 	AddAdmin() string
 	GetAdmin() string
