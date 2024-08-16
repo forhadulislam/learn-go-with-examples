@@ -5,6 +5,8 @@ import (
 	"strings"
 )
 
+
+
 func main() {
 	// Defining an empty string
 	var myEmptyString string

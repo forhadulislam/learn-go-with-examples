@@ -35,8 +35,19 @@ func (v *Vehicle) printMyVehicle() {
 	fmt.Println("printMyVehicle() ends")
 }
 
+
+type MyString string
+
+func (r MyString) String() string {
+	return string(r)
+}
+
 // Main function
 func main() {
+
+	a := MyString("Hello")
+	fmt.Println("Value for a:", a.String())
+
 	// Part of Example 1
 	v := Vehicle{
 		Brand:    "Hyundai",
