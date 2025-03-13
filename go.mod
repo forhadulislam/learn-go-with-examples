@@ -1,6 +1,7 @@
 module github.com/forhadulislam/learn-go-with-examples
 
 go 1.22.1
+toolchain go1.23.7
 
 require (
 	github.com/IBM/sarama v1.43.3
@@ -33,7 +34,7 @@ require (
 	github.com/rogpeppe/go-internal v1.11.0 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
 	github.com/tidwall/pretty v1.2.1 // indirect
-	golang.org/x/crypto v0.31.0 // indirect
-	golang.org/x/net v0.28.0 // indirect
+	golang.org/x/crypto v0.35.0 // indirect
+	golang.org/x/net v0.36.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
